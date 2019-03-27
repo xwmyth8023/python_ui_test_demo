@@ -6,7 +6,7 @@ import time
 
 
 # 设置报告文件保存路径
-report_path = file_path = os.path.dirname(os.getcwd())+'/python_ui_test_demo/reports/'
+report_path = os.path.dirname(os.getcwd())+'/python_ui_test_demo/reports/'
 
 # 构建suite
 suite = unittest.TestLoader().discover("tests")
