@@ -9,8 +9,8 @@ logger = Logger(logger="BrowserEngine").getlog()
 
 class BrowserEngine(object):
 
-    chrome_driver_path = os.path.dirname(os.getcwd()) + '/python_ui_test_demo/tools/chromedriver'
-    firefox_driver_path = os.path.dirname(os.getcwd()) + '/python_ui_test_demo/tools/geckodriver'
+    chrome_driver_path = os.path.join(os.path.abspath('.'), 'tools/chromedriver')
+    firefox_driver_path = os.path.join(os.path.abspath('.'), 'tools/geckodriver')
     # print(chrome_driver_path,firefox_driver_path)
 
     def __init__(self, driver):
@@ -19,7 +19,7 @@ class BrowserEngine(object):
     # read the browser type from config.ini file, return the driver
     def open_browser(self, driver):
         config = configparser.ConfigParser()
-        file_path = os.path.dirname(os.getcwd())+'/python_ui_test_demo/config/config.ini'
+        file_path = os.path.join(os.path.abspath('.'),'config/config.ini')
         # print(file_path)
         config.read(file_path)
 
