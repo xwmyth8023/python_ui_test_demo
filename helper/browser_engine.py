@@ -11,6 +11,7 @@ class BrowserEngine(object):
 
     chrome_driver_path = os.path.join(os.path.abspath('.'), 'tools/chromedriver')
     firefox_driver_path = os.path.join(os.path.abspath('.'), 'tools/geckodriver')
+    ie_driver_path = os.path.join(os.path.abspath('.'), 'tools/iedriver')
     # print(chrome_driver_path,firefox_driver_path)
 
     def __init__(self, driver):
@@ -51,7 +52,3 @@ class BrowserEngine(object):
     def quit_browser(self):
         logger.info("Now, Close and quit the browser.")
         self.driver.quit()
-
-
-
-
