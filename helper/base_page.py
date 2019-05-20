@@ -46,13 +46,10 @@ class BasePage(object):
             self.driver.close()
             logger.info("Closing and quit the browser.")
         except NameError as e:
-            logger.error("Failed to quit the browser with {}".fromat(e))
+            logger.error("Failed to quit the browser with {}".format(e))
 
     # 保存图片
     def get_windows_img(self):
-        """
-        在这里我们把file_path这个参数写死，直接保存到我们项目根目录的一个文件夹.\Screenshots下
-        """
         file_path = os.path.dirname(os.path.abspath('.')) + '/screenshots/'
         rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
         screen_name = file_path + rq + '.png'
@@ -60,7 +57,7 @@ class BasePage(object):
             self.driver.get_screenshot_as_file(screen_name)
             logger.info("Had take screenshot and save to folder : /screenshots")
         except NameError as e:
-            logger.error("Failed to take screenshot! {}".fromat(e))
+            logger.error("Failed to take screenshot! {}".format(e))
             self.get_windows_img()
 
     # 定位元素方法
